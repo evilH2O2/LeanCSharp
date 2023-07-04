@@ -23,6 +23,13 @@
                 Host = "127.0.0.1"
             };
             Console.WriteLine(win.Host);
+            
+            // 并发
+            // Thread
+            ThreadTest tt = new ThreadTest();
+            // tt.PrintNumber();
+            // tt.PrintNumberWithThread();
+            tt.PrintNumberWithThreadWithArgs();
         }
     }
 }
