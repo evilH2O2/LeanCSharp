@@ -16,6 +16,13 @@
             var ldapT2 = new LdapTarget2("127.0.0.1", "ldap");
             Console.WriteLine(ldapT2.FullHost);
             // ldapT.Protocol = "ssh"; // 此时的 Protocol 将无法被赋新值
+
+            // 继承
+            var win = new WidnowsOS()
+            {
+                Host = "127.0.0.1"
+            };
+            Console.WriteLine(win.Host);
         }
     }
 }
