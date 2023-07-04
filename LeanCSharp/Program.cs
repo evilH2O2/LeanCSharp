@@ -2,7 +2,7 @@
 {
     static class InvokeMe
     {
-        static void Main()
+        static void Run1()
         {
             Console.WriteLine("hello world");
 
@@ -30,6 +30,21 @@
             // tt.PrintNumber();
             // tt.PrintNumberWithThread();
             tt.PrintNumberWithThreadWithArgs();
+        }
+
+        static void Run2()
+        {
+            // 这样会直接退出，并不等待
+            var task = new TaskTest();
+            var t = task.PrintNumberWithTask();
+            t.GetAwaiter().GetResult(); // 程序等待
+            task.PrintNumberWithTaskReturn();
+        }
+
+        static void Main()
+        {
+            // Run1();
+            Run2();
         }
     }
 }
