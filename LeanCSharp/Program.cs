@@ -44,7 +44,23 @@
         static void Main()
         {
             // Run1();
-            Run2();
+            // Run2();
+            string src = "/Users/ruiliang/Downloads/PicAcg/commies/[武藤まと]狐と夏風/original/第1話";
+            FolderProcess fp = new FolderProcess(src);
+            string[]? filesUrl = fp.GetFiles();
+            if (filesUrl != null)
+            {
+                foreach (var file in filesUrl)
+                {
+                    Console.WriteLine(file);
+                }
+            }
+            else
+            {
+                Console.WriteLine("目录内没有文件！");
+            }
+
+            Console.WriteLine(fp.GetParentPathWithCount(src, 2));
         }
     }
 }
